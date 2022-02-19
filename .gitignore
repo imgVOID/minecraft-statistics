@@ -1,0 +1,4 @@
+/venv/
+/data/history_activity/
+/.idea/
+/database/launcher_db.sqlite3
