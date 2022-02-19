@@ -1,7 +1,7 @@
 from aiosqlite import connect
 from datetime import datetime
 from pandas import read_sql
-from os import makedirs
+from os import makedirs, sep
 from sqlite3 import connect, PARSE_COLNAMES
 
 
@@ -11,7 +11,7 @@ class SQLite:
     def __init__(self, name):
         self.name = name
         self.__conn = connect(
-            f'./database/{name}.sqlite3', isolation_level=None, detect_types=PARSE_COLNAMES
+            f'.{sep}database{sep}{name}.sqlite3', isolation_level=None, detect_types=PARSE_COLNAMES
         )
         self.__cur = self.__conn.cursor()
         self.__create_launcher_data_table()
@@ -51,7 +51,7 @@ class SQLite:
         except FileExistsError:
             pass
         finally:
-            data.to_csv(f'{path}/Day {date_time[1]}.csv', index=False)
+            data.to_csv(f'{path}{sep}Day {date_time[1]}.csv', index=False)
             self.__clear_launcher_data_table()
 
 

@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from routers.minecraft_statistics import router_minecraft_statistics
 from scheduled.minecraft_statistics import save_statistics_dump
-from data.config import config
+from config import config
 
 app = FastAPI()
 app.add_middleware(
