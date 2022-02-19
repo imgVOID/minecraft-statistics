@@ -11,10 +11,10 @@ class Globals:
         self.SCHEDULER_TIMINGS = {
             "statistics_dump": {
                 "name": "Launcher statistics dump",
-                #"trigger": "cron",
-                #"datetime": {"hour": 23, "minute": 59, "second": 10}  # must be everyday
-                "trigger": "interval",
-                "datetime": {"seconds": 5}  # must be everyday
+                "trigger": "cron",
+                "datetime": {"hour": 23, "minute": 59, "second": 10}  # must be everyday
+                # "trigger": "interval",
+                # "datetime": {"seconds": 5}  # test
             },
         }
 
