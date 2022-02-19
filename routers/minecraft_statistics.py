@@ -13,6 +13,6 @@ router_minecraft_statistics = APIRouter(
 @router_minecraft_statistics.post("/launcher_data")
 async def launcher_data(data: LauncherData):
     db.write_login_attempt(
-        escape(data.nickname), escape(data.ads_source), data.launched_at
+        escape(data.nickname), escape(data.ads_source), data.launched_at.isoformat()
     )
     return data

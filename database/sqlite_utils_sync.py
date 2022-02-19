@@ -6,12 +6,12 @@ from sqlite3 import connect, PARSE_COLNAMES
 
 
 class SQLite:
-    __slots__ = {'__conn', '__cur', '__groups', 'name', '_backup_parent_dir'}
+    __slots__ = {'__conn', '__cur', 'name'}
 
     def __init__(self, name):
         self.name = name
         self.__conn = connect(
-            f'{name}.sqlite3', isolation_level=None, detect_types=PARSE_COLNAMES
+            f'./database/{name}.sqlite3', isolation_level=None, detect_types=PARSE_COLNAMES
         )
         self.__cur = self.__conn.cursor()
         self.__create_launcher_data_table()
