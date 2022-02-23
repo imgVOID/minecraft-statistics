@@ -5,7 +5,6 @@ from schemas.minecraft_statistics import LauncherData
 
 router_minecraft_statistics = APIRouter(
     redirect_slashes=False,
-    prefix="/api",
     tags=["minecraft_statistics"],
 )
 
