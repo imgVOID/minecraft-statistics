@@ -12,7 +12,7 @@ router_minecraft_statistics = APIRouter(
 
 
 @router_minecraft_statistics.post("/send_data_launcher")
-async def launcher_data(data: DataLauncher):
+async def data_launcher(data: DataLauncher):
     db.write_login_attempt(
         escape(data.username), escape(data.ads_source), data.launched_at.isoformat()
     )
@@ -20,7 +20,7 @@ async def launcher_data(data: DataLauncher):
 
 
 @router_minecraft_statistics.post("/send_data_vandals")
-async def launcher_data(data: DataVandals = ""):
+async def data_vandals(data: DataVandals = ""):
     async with websockets.connect('ws://localhost:8765') as websocket:
         await websocket.send(data.json())
         print(f"Vandal detected! {datetime.now().isoformat()}")
