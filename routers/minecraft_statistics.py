@@ -1,6 +1,4 @@
 import websockets
-import asyncio
-from httpx import AsyncClient
 from datetime import datetime
 from fastapi import APIRouter
 from re import escape
