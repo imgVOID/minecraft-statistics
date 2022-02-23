@@ -5,3 +5,5 @@ apscheduler
 pandas
 gunicorn
 tabulate
+httpx
+websockets
