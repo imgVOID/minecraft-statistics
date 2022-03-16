@@ -10,7 +10,7 @@ class DataLauncher(BaseModel):
     class Config:
         schema_extra = {
             "example": {
-                "nickname": "Minecraft nickname",
+                "username": "Minecraft nickname",
                 "ads_source": "ADs source's ID",
                 "launched_at": datetime.utcnow(),
             }
